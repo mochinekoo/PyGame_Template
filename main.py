@@ -10,8 +10,6 @@ class Main:
     instance = None
     keyFlag = False
     screen = None
-    location = Vector2(100, 50)
-    vector = Vector2(1, 0)
 
     def __init__(self):
         pass
@@ -52,8 +50,6 @@ class Main:
             currentScene.draw()
 
     def update(self):
-        keys = pygame.key.get_pressed()
-
         currentScene = SceneManager.getInstance().getCurrentScene()
         if currentScene is not None:
             currentScene.update()

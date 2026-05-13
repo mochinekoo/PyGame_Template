@@ -1,22 +1,26 @@
 import pygame.draw
 
+from Object.TestObject import TestObject
 from Scene.BaseScene import BaseScene
 from abc import ABC, abstractmethod
 
 class RootScene(BaseScene):
 
+    testObj: TestObject = None
+
     def __init__(self):
         super().__init__("RootScene")
 
     def init(self):
-        pass
+        self.testObj = TestObject()
+        self.testObj.init()
 
     def update(self):
         self.sceneCounter += 1
+        self.testObj.update()
 
     def draw(self):
-        screen = pygame.display.get_surface()
-        pygame.draw.rect(screen,(255,0,0),(100,100,180,150),5)
+        self.testObj.draw()
 
     def release(self):
         pass

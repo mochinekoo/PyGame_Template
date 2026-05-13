@@ -7,10 +7,10 @@ class SceneManager:
     sceneMap: dict[str, BaseScene] = {
         "RootScene": RootScene()
     }
-    currentScene: BaseScene = sceneMap["RootScene"]
+    currentScene: BaseScene = None
 
     def __init__(self):
-        pass
+        self.changeScene("RootScene")
 
     def __new__(cls):
         if cls.instance is None:
@@ -30,4 +30,5 @@ class SceneManager:
         scene = self.sceneMap.get(sceneName)
         if scene is not None:
             self.currentScene = scene
+            self.currentScene.init()
 
