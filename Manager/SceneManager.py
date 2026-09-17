@@ -1,3 +1,4 @@
+from Manager.ObjectManager import ObjectManager
 from Scene.BaseScene import BaseScene
 from Scene.RootScene import RootScene
 
@@ -29,6 +30,7 @@ class SceneManager:
     def changeScene(self, sceneName: str):
         scene = self.sceneMap.get(sceneName)
         if scene is not None:
+            ObjectManager.getInstance().clearAllObject()
             self.currentScene = scene
             self.currentScene.init()
 

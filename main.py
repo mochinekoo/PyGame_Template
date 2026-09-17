@@ -3,6 +3,7 @@ import sys
 import pygame
 from pygame.math import Vector2
 
+from Manager.ObjectManager import ObjectManager
 from Manager.SceneManager import SceneManager
 
 class Main:
@@ -32,6 +33,7 @@ class Main:
         self.screen = pygame.display.set_mode((1280, 720))
         pygame.display.set_caption("テストゲームだよ")
         self.screen.fill((0, 255, 0))
+        ObjectManager.getInstance().clearAllObject()
         self.runGame()
 
     def runGame(self):
@@ -48,11 +50,13 @@ class Main:
         currentScene = SceneManager.getInstance().getCurrentScene()
         if currentScene is not None:
             currentScene.draw()
+            ObjectManager.getInstance().drawAllObject()
 
     def update(self):
         currentScene = SceneManager.getInstance().getCurrentScene()
         if currentScene is not None:
             currentScene.update()
+            ObjectManager.getInstance().updateAllObject()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
