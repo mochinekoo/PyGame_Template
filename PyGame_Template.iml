@@ -5,7 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12 (PyGame_Template)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="K:\User_Files\Dev\mochineko\Python_Project\PyGame_Template\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
